@@ -1,7 +1,7 @@
-# Typescript Web Applications
+# Typescript Web Application
 * Client side web framework
 
 # Learning goals
 * Fetch data
-* render content
-* handle user events
+* Render content
+* Handle user events

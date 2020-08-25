@@ -13,3 +13,6 @@ user.on('save', () => {
 })
 
 user.trigger('meow')
+
+//npm run start:db
+//npm run start:parcel
