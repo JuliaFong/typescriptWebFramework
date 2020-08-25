@@ -1,18 +1,7 @@
-import { User } from './models/User'
+import axios from 'axios';
 
-const user = new User({name: "yourname", age:20})
+axios.get('http://localhost:3000/users/1',);
 
-user.on('meow', () => {
-    console.log('meow #1')
-})
-user.on('meow', () => {
-    console.log('meow #2')
-})
-user.on('save', () => {
-    console.log('save was triggered')
-})
-
-user.trigger('meow')
 
 //npm run start:db
 //npm run start:parcel
