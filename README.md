@@ -5,3 +5,4 @@
 * Fetch data
 * Render content
 * Handle user events
+* Learn strings can be types 
