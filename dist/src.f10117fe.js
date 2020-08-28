@@ -129,28 +129,30 @@ var Eventing =
 /** @class */
 function () {
   function Eventing() {
+    var _this = this;
+
     this.events = {};
+
+    this.on = function (eventName, callback) {
+      _this.events[eventName]; //Callback[] or undefined
+
+      var handlers = _this.events[eventName] || [];
+      handlers.push(callback);
+      _this.events[eventName] = handlers;
+    };
+
+    this.trigger = function (eventName) {
+      var handlers = _this.events[eventName];
+
+      if (!handlers || handlers.length === 0) {
+        return;
+      }
+
+      handlers.forEach(function (callback) {
+        callback();
+      });
+    };
   }
-
-  Eventing.prototype.on = function (eventName, callback) {
-    this.events[eventName]; //Callback[] or undefined
-
-    var handlers = this.events[eventName] || [];
-    handlers.push(callback);
-    this.events[eventName] = handlers;
-  };
-
-  Eventing.prototype.trigger = function (eventName) {
-    var handlers = this.events[eventName];
-
-    if (!handlers || handlers.length === 0) {
-      return;
-    }
-
-    handlers.forEach(function (callback) {
-      callback();
-    });
-  };
 
   return Eventing;
 }();
@@ -2003,12 +2005,14 @@ var Attributes =
 /** @class */
 function () {
   function Attributes(data) {
-    this.data = data;
-  }
+    var _this = this;
 
-  Attributes.prototype.get = function (key) {
-    return this.data[key];
-  };
+    this.data = data;
+
+    this.get = function (key) {
+      return _this.data[key];
+    };
+  }
 
   Attributes.prototype.set = function (update) {
     Object.assign(this.data, update);
@@ -2078,13 +2082,14 @@ Object.defineProperty(exports, "__esModule", {
 var User_1 = require("./models/User");
 
 var user = new User_1.User({
-  name: 'new record',
+  name: 'cat',
   age: 0
 });
-var on = user.on;
+console.log(user.get('name'));
 user.on('change', function () {
-  console.log('user was changed');
-}); //npm run start:db
+  console.log('Changed userrrr');
+});
+user.trigger('change'); //npm run start:db
 //npm run start:parcel
 },{"./models/User":"src/models/User.ts"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -2114,7 +2119,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49383" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50604" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

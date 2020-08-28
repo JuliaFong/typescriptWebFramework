@@ -1,12 +1,14 @@
 import { User } from './models/User';
 
-const user = new User({ name: 'new record', age: 0 });
+const user = new User({ name: 'cat', age: 0 });
 
-const on = user.on;
+ console.log(user.get('name'))
 
+ user.on('change', () => {
+     console.log('Changed userrrr')
+ })
 
-user.on('change', () => {
-    console.log('user was changed')
-})
+ user.trigger('change')
+
 //npm run start:db
 //npm run start:parcel
