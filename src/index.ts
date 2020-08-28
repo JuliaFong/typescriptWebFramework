@@ -9,6 +9,7 @@ const user = new User({ name: 'cat', age: 0 });
  })
 
  user.trigger('change')
+ user.set({name: 'New name'})
 
 //npm run start:db
 //npm run start:parcel
