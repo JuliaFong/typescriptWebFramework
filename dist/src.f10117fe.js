@@ -1985,7 +1985,7 @@ function () {
       return axios_1.default.put(this.rootUrl + "/" + id, data);
     } else {
       //post
-      return axios_1.default.post('this.rootUrl', data);
+      return axios_1.default.post(this.rootUrl, data);
     }
   };
 
@@ -2153,7 +2153,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57239" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51740" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

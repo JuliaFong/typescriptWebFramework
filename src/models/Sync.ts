@@ -1,4 +1,4 @@
-import axios, {  AxiosPromise } from 'axios';
+import axios, {  AxiosPromise, AxiosResponse } from 'axios';
 
 interface HasId {
     id?: number;
@@ -16,10 +16,10 @@ export class Sync<T extends HasId> {
         const { id } = data;
        if (id) {
            //put
-           return axios.put(`${this.rootUrl}/${id}`, data)
+        return axios.put(`${this.rootUrl}/${id}`, data)
        } else {
            //post
-           return axios.post('this.rootUrl', data);
+           return axios.post(this.rootUrl, data);
        }
     }
 }
