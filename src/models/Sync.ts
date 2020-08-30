@@ -1,4 +1,4 @@
-import axios, {  AxiosPromise, AxiosResponse } from 'axios';
+import axios, {  AxiosPromise } from 'axios';
 
 interface HasId {
     id?: number;
@@ -12,7 +12,7 @@ export class Sync<T extends HasId> {
         };
     
 
-    save(data: T ): AxiosPromise {
+    save(data: T): AxiosPromise {
         const { id } = data;
        if (id) {
            //put

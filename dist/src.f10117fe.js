@@ -2040,7 +2040,7 @@ var Sync_1 = require("./Sync");
 
 var Attributes_1 = require("./Attributes");
 
-var rootUrl = 'http//localhost:3000/users';
+var rootUrl = 'http://localhost:3000/users';
 
 var User =
 /** @class */
@@ -2153,7 +2153,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51740" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57967" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
