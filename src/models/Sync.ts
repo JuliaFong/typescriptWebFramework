@@ -8,8 +8,8 @@ export class Sync<T extends HasId> {
     constructor(public rootUrl: string) {}
 
     fetch(id: number): AxiosPromise {
-        return axios.get(`${this.rootUrl}/${id}`)
-        };
+        return axios.get(`${this.rootUrl}/${id}`);
+    };
     
 
     save(data: T): AxiosPromise {
@@ -21,5 +21,5 @@ export class Sync<T extends HasId> {
            //post
            return axios.post(this.rootUrl, data);
        }
-    }
+    };
 }

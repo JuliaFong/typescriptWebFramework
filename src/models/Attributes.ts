@@ -1,5 +1,3 @@
-
-
 export class Attributes<T> {
     constructor(private data: T) {}
 
