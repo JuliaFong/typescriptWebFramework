@@ -2052,57 +2052,6 @@ function () {
     this.attributes = new Attributes_1.Attributes(attrs);
   }
 
-  Object.defineProperty(User.prototype, "on", {
-    get: function get() {
-      return this.events.on;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(User.prototype, "trigger", {
-    get: function get() {
-      return this.events.trigger;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(User.prototype, "get", {
-    get: function get() {
-      return this.attributes.get;
-    },
-    enumerable: false,
-    configurable: true
-  });
-
-  User.prototype.set = function (update) {
-    this.attributes.set(update);
-    this.events.trigger('change');
-  };
-
-  User.prototype.fetch = function () {
-    var _this = this;
-
-    var id = this.attributes.get('id');
-
-    if (typeof id !== 'number') {
-      throw new Error('Cannot fetch without an id');
-    }
-
-    this.sync.fetch(id).then(function (response) {
-      _this.set(response.data);
-    });
-  };
-
-  User.prototype.save = function () {
-    var _this = this;
-
-    this.sync.save(this.attributes.getAll()).then(function (response) {
-      _this.trigger('save');
-    }).catch(function () {
-      _this.trigger('error!!');
-    });
-  };
-
   return User;
 }();
 
@@ -2154,7 +2103,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60963" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63341" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
