@@ -1,13 +1,10 @@
-import { User } from './models/User';
+import { UserForm } from './views/UserForm';
 
+const userForm = new UserForm(
+    document.getElementById('root')
+);
 
-const collection = User.buildUserCollection()
-
-collection.on('change', () => {
-    console.log(collection);
-})
-
-collection.fetch();
+userForm.render();
 
 //npm run start:db
 //npm run start:parcel
