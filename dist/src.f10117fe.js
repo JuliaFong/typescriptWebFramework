@@ -135,21 +135,16 @@ function () {
 
   UserForm.prototype.eventsMap = function () {
     return {
-      'click:button': this.onButtonClick,
-      'mouseenter:h1': this.onHeaderHover
+      'click:.set-age': this.onSetAgeClick
     };
   };
 
-  UserForm.prototype.onHeaderHover = function () {
-    console.log('h1 hoovers!!!');
-  };
-
-  UserForm.prototype.onButtonClick = function () {
-    console.log('hit itttt');
+  UserForm.prototype.onSetAgeClick = function () {
+    console.log('button clicksss');
   };
 
   UserForm.prototype.template = function () {
-    return "\n        <div>\n            <h1>User Form </h1>\n            <div> User name: " + this.model.get('name') + "</div>\n            <div> User age: " + this.model.get('age') + "</div>\n            <input />\n            <button>Click me!!!</button>\n        </div>\n        ";
+    return "\n        <div>\n            <h1>User Form </h1>\n            <div> User name: " + this.model.get('name') + "</div>\n            <div> User age: " + this.model.get('age') + "</div>\n            <input />\n            <button>Click me!!!</button>\n            <button class=\"set-age\">Set Random Age</button>\n        </div>\n        ";
   };
 
   UserForm.prototype.bindEvents = function (fragment) {
@@ -162,7 +157,7 @@ function () {
           eventName = _a[0],
           selector = _a[1];
 
-      fragment.querySelectorAll(selector).forEach(function (element) {
+      fragment.querySelectorAll('.set-age').forEach(function (element) {
         element.addEventListener(eventName, eventsMap[eventKey]);
       });
     };
@@ -2320,7 +2315,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50099" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62054" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

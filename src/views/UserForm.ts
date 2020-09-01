@@ -8,19 +8,15 @@ export class UserForm {
 
     eventsMap(): { [key: string]: () => void } {
         return {
-            'click:button': this.onButtonClick,
-            'mouseenter:h1': this.onHeaderHover
-           
+            
+            'click:.set-age': this.onSetAgeClick
         };
     }
 
-    onHeaderHover(): void {
-        console.log('h1 hoovers!!!')
-    }
 
-    onButtonClick(): void {
-        console.log('hit itttt')
-    }
+  onSetAgeClick():void {
+    console.log('button clicksss')
+  }
 
     template(): string {
         return `
@@ -30,6 +26,7 @@ export class UserForm {
             <div> User age: ${this.model.get('age')}</div>
             <input />
             <button>Click me!!!</button>
+            <button class="set-age">Set Random Age</button>
         </div>
         `;
     }
@@ -42,7 +39,7 @@ export class UserForm {
             //selector 'button'
             const [eventName, selector] = eventKey.split(':');
 
-            fragment.querySelectorAll(selector).forEach(
+            fragment.querySelectorAll('.set-age').forEach(
                 element => {
                     element.addEventListener(eventName, eventsMap[eventKey])
                 });
