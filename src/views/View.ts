@@ -13,7 +13,7 @@ export abstract class View<T extends Model<K>, K> {
 
     abstract template (): string;
 
-    eventsMap(): { [ key: string]: () => void} {
+    eventsMap(): { [ key: string]: () => void } {
         return {};
     }
 
